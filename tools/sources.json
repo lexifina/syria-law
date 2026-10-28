@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {"id": "const2012-pa-2015", "via": "wayback", "ts": "20150428001050",
+     "page": "http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&",
+     "publisher": "People's Assembly of the Syrian Arab Republic (parliament.gov.sy)",
+     "what": "Constitution of the Syrian Arab Republic 2012, with Decree 94 of 2012, as published on the People's Assembly site"},
+    {"id": "const2012-pa-2024", "via": "wayback", "ts": "20241207201658",
+     "page": "http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&",
+     "publisher": "People's Assembly of the Syrian Arab Republic (parliament.gov.sy)",
+     "what": "The same page captured on 7 December 2024, the last capture before the fall of the government on 8 December 2024"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+ "country": "SY",
+ "acts": [
+  {
+   "slug": "constitution-2012",
+   "short": "دستور 2012",
+   "title": "دستور الجمهورية العربية السورية 2012",
+   "url": "http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&",
+   "versions": [
+    {
+     "from": "2012-02-27",
+     "units": 158,
+     "source_url": "https://web.archive.org/web/20241207201658id_/http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&",
+     "sha256": "090677252158b0dc6d8c3fcd6969a9dc2a90b9f6a62b5a960d6ffc4eeeb1a6db"
+    }
+   ]
+  }
+ ]
+}
