@@ -60,7 +60,7 @@ def lines_of(raw: bytes) -> list[str]:
     t = raw.decode('cp1256', 'replace')
     a = t.find("id='intro'")
     b = t.find('عدد المشاهدات', a)
-    t = t[a:b]
+    t = re.sub(r'(?is)<script.*?</script>', '', t[a:b])
     t = re.sub(r'(?is)<(br|/p|/div|/tr|/li|/h\d)[^>]*>', '\n', t)
     t = html.unescape(re.sub(r'<[^>]+>', '', t))
     return [x for x in (norm(l) for l in t.split('\n')) if x]
