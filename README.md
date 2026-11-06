@@ -1,5 +1,7 @@
 # Syria: law history in git
 
+Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Syria's national law, which global-law reads at `syria/national/acts/`.
+
 The law of Syria (SY) as a git history: one file per provision, one commit per law on the day it took effect, and the law that made the change as the commit author. It follows the shared design of [lexifina/global-law](https://github.com/lexifina/global-law), which places it at `sy/`.
 
 **First build, deliberately small.** Language: Arabic (the official language), so the text is right-to-left.
