@@ -1,36 +1,43 @@
-# Syria: law history in git
+# سوريا: تاريخ القانون في git
 
-The law of Syria as a git history: one file per provision, one commit per version on the day it took effect, and the act that made each change as the commit's author. `git blame` names the act behind every article; `git log` lists every change to an article; picking a date gives the text in force that day.
+**العربية** · [English](README.en.md)
 
-Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Syria's national law, which global-law reads at `syria/national/acts/`.
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="data/ar/effort-dark.svg">
+<img alt="القانون السوري في هذا المستودع: ما يحتويه، والتعديلات حسب سنة نفاذها، والاكتمال مقارنةً بالمصادر الرسمية، وصحة المحتوى" src="data/ar/effort-light.svg" width="880">
+</picture>
 
-**What is in it now:** the Constitution of the Syrian Arab Republic of 2012, in one version: its preamble and Articles 1 to 157 (158 provisions), as the People's Assembly published it. No statute, decree, code or treaty is here yet. [`constitution-2012/README.md`](constitution-2012/README.md) lists every provision; [`REPRODUCE.md`](REPRODUCE.md) says how the files were made.
+القانون السوري في صورة سجل git: ملف واحد لكل حكم، وcommit واحد لكل نسخة في يوم نفاذها، والتشريع الذي أجرى كل تعديل هو مؤلف الـ commit. يذكر `git blame` التشريع الذي يقف وراء كل مادة؛ ويسرد `git log` كل تعديل طرأ على مادة ما؛ واختيار تاريخ ما يعطي النص النافذ في ذلك اليوم.
 
-**The 2012 Constitution is no longer in force.** After the fall of the previous government on 8 December 2024 it was replaced in 2025, and the Constitutional Declaration of 13 March 2025 sets out the transitional order. This record keeps the 2012 text as the last constitution the People's Assembly published; the Declaration is not here yet.
+جزء من [lexifina/global-law](https://github.com/lexifina/global-law)، وهو سجل git واحد لقوانين جميع الدول: هذا هو القانون الوطني السوري، الذي يقرؤه global-law في `syria/national/acts/`.
 
-Each act is a folder with one file per provision: `constitution-2012/art-001.md` is Article 1 and `constitution-2012/preamble.md` the preamble.
+**ما يحتويه الآن:** دستور الجمهورية العربية السورية لعام 2012، في نسخة واحدة: مقدمته والمواد من 1 إلى 157 (158 حكمًا)، كما نشره مجلس الشعب. ولا يوجد هنا بعدُ أي قانون أو مرسوم أو تقنين أو معاهدة. يسرد [`constitution-2012/README.md`](constitution-2012/README.md) كل الأحكام؛ ويبيّن [`REPRODUCE.md`](REPRODUCE.md) كيف أُعدّت الملفات.
 
-The text is in Arabic, as the People's Assembly published it. An English translation is not part of this record.
+**لم يعد دستور 2012 نافذًا.** بعد سقوط الحكومة السابقة في 8 ديسمبر 2024، استُبدل به في عام 2025، ويحدد الإعلان الدستوري الصادر في 13 مارس 2025 النظام الانتقالي. يحتفظ هذا السجل بنص 2012 بوصفه آخر دستور نشره مجلس الشعب؛ والإعلان ليس هنا بعد.
 
-## Questions as git commands
+كل تشريع مجلد فيه ملف واحد لكل حكم: `constitution-2012/art-001.md` هي المادة 1، و`constitution-2012/preamble.md` المقدمة.
 
-| Question | Command |
+النص باللغة العربية، كما نشره مجلس الشعب. والترجمة الإنجليزية ليست جزءًا من هذا السجل.
+
+## الأسئلة بصيغة أوامر git
+
+| السؤال | الأمر |
 | --- | --- |
-| Every change to Article 1 of the Constitution | `git log -p --word-diff -- constitution-2012/art-001.md` |
-| Which act wrote each line of Article 1? | `git blame constitution-2012/art-001.md` |
-| Every version of the Constitution, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- constitution-2012 ":^constitution-2012/README.md"` |
-| Article 1 as in force on 1 January 2020 | `python tools/on.py 2020-01-01 constitution-2012 art-001` |
+| كل تعديل طرأ على المادة 1 من الدستور | `git log -p --word-diff -- constitution-2012/art-001.md` |
+| أي تشريع كتب كل سطر من المادة 1؟ | `git blame constitution-2012/art-001.md` |
+| كل نسخ الدستور، مع يوم نفاذ كل منها | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- constitution-2012 ":^constitution-2012/README.md"` |
+| المادة 1 كما كانت نافذة في 1 يناير 2020 | `python tools/on.py 2020-01-01 constitution-2012 art-001` |
 
-**Outside git**, we also host this record publicly, for free:
+**خارج git**، نستضيف هذا السجل أيضًا للعموم مجانًا:
 
-- **[Ask Claude about Syrian law](https://global-law.lexifina.com/v1/try_claude?country=syria)**: opens Claude with a first question ready.
-- **[Ask ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=syria)**: the same question in ChatGPT.
-- **[Search Syrian law on our site](https://lexifina.com/law?country=syria&q=%D8%AD%D8%B1%D9%8A%D8%A9+%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D9%82%D8%A7%D8%AF)**: a search for "حرية الاعتقاد" (freedom of belief), with each provision's text and its versions, no account needed.
-- **[Developer REST API](https://global-law.lexifina.com/v1/search_law?query=%D8%AD%D8%B1%D9%8A%D8%A9+%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D9%82%D8%A7%D8%AF&jurisdiction=syria)**: the same search as JSON, with no key. See the [documentation here](https://lexifina.com/api/global-law).
+- **[اسأل Claude عن القانون السوري](https://global-law.lexifina.com/v1/try_claude?country=syria)**: يفتح Claude مع سؤال أول جاهز.
+- **[اسأل ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=syria)**: السؤال نفسه في ChatGPT.
+- **[ابحث في القانون السوري على موقعنا](https://lexifina.com/law?country=syria&q=%D8%AD%D8%B1%D9%8A%D8%A9+%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D9%82%D8%A7%D8%AF)**: بحث عن "حرية الاعتقاد"، مع نص كل حكم ونسخه، دون الحاجة إلى حساب.
+- **[واجهة REST API للمطورين](https://global-law.lexifina.com/v1/search_law?query=%D8%AD%D8%B1%D9%8A%D8%A9+%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D9%82%D8%A7%D8%AF&jurisdiction=syria)**: البحث نفسه بصيغة JSON، دون مفتاح. انظر [التوثيق هنا](https://lexifina.com/api/global-law).
 
-Both assistants read the record through the free Global law connector (MCP, `https://global-law.lexifina.com/mcp`); the first time, the chat gives you the link that adds it. Ask in Arabic or in English.
+يقرأ كلا المساعدَين السجلَّ عبر موصل Global law المجاني (MCP، `https://global-law.lexifina.com/mcp`)؛ وفي المرة الأولى تعطيك المحادثة الرابط الذي يضيفه. اسأل بالعربية أو بالإنجليزية.
 
-**Host it yourself easily.** All it takes is git and Python, and the tools run on your machine:
+**استضِفه بنفسك بسهولة.** كل ما يلزم هو git وPython، والأدوات تعمل على جهازك:
 
 ```sh
 git clone --depth 1 https://github.com/lexifina/global-law && cd global-law
@@ -38,49 +45,51 @@ python3 tools/countries.py add syria/national/acts
 python3 tools/law.py show 2020-01-01 syria/national/acts/constitution-2012/art-001.md
 ```
 
-Opened in Claude Code, Cursor, VS Code or Codex, the clone also starts a local MCP server with the same tools ([MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md)).
+عند فتح النسخة المستنسخة في Claude Code أو Cursor أو VS Code أو Codex، تشغّل أيضًا خادم MCP محليًا بالأدوات نفسها ([MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md)).
 
-## Dates
+## التواريخ
 
-Each commit is dated at noon, Asia/Damascus, on the day the version took effect, and carries it in its `In-force:` trailer:
+يحمل كل commit تاريخ الظهر، بتوقيت Asia/Damascus، من يوم نفاذ النسخة، ويذكر هذا التاريخ في حقله الختامي (trailer) `In-force:`:
 
-- the Constitution's one version is dated 27 February 2012, the day Decree 94 of 2012, Article 1, as printed on the People's Assembly page, gives for its entry into force. A date before 27 February 2012 gives no text;
-- the end of the 2012 Constitution in 2025 is not yet recorded, so a later date still gives the 2012 text.
+- النسخة الوحيدة من الدستور مؤرَّخة في 27 فبراير 2012، وهو اليوم الذي تذكره المادة 1 من المرسوم رقم 94 لعام 2012، كما طُبع في صفحة مجلس الشعب، لنفاذه. والتاريخ السابق لـ 27 فبراير 2012 لا يعطي أي نص؛
+- لم يُسجَّل بعدُ انتهاء دستور 2012 في عام 2025، لذا يعطي التاريخ اللاحق نص 2012 أيضًا.
 
-No version is credited to a law. The site gives no amendment history, so the one version is the "oldest version available", credited to the publisher, the People's Assembly (`Kind: publisher`); its commit message names Decree 94 of 2012, which published the Constitution. The committer is Lexifina.
+لا تُنسب أي نسخة إلى قانون. لا يقدّم الموقع تاريخًا للتعديلات، لذا فالنسخة الوحيدة هي "oldest version available" (أقدم نسخة متاحة)، منسوبة إلى الناشر، مجلس الشعب (`Kind: publisher`)؛ وتذكر رسالة الـ commit الخاصة بها المرسوم رقم 94 لعام 2012، الذي نُشر به الدستور. وصاحب الـ commit (committer) هو Lexifina.
 
-## How it is checked
+## طريقة التحقق
 
-- `tools/check_repo.py` reads every version back from git on the day it took effect and on the day before and compares it with the corpus, whose hash is in `data/corpus.sha256`; it also checks that every commit's trailers parse, that `main` has no merge commits and that no commit is dated in the future.
-- `tools/build.py` writes the history from that one corpus file, and the same corpus gives the same commit hashes. [`REPRODUCE.md`](REPRODUCE.md) records that the checks were not yet run for this build and that no second build has been compared.
-- The text was read from two Internet Archive captures of the People's Assembly page, of 28 April 2015 and 7 December 2024 (the last before 8 December 2024); they give the same words in every provision. The live page could not be compared. The sha256 of the capture parsed is in `data/versions.json`.
+- يعيد `tools/check_repo.py` قراءة كل نسخة من git في يوم نفاذها وفي اليوم السابق له ويقارنها بالمجموعة، التي ترد قيمة تجزئتها في `data/corpus.sha256`؛ ويتحقق أيضًا من أن الحقول الختامية لكل commit قابلة للتحليل، وأن `main` لا يحتوي على commits دمج (merge)، وأنه لا يوجد commit مؤرَّخ في المستقبل.
+- يكتب `tools/build.py` السجل من ملف المجموعة الوحيد ذاك، والمجموعة نفسها تعطي قيم تجزئة الـ commits نفسها. ويسجّل [`REPRODUCE.md`](REPRODUCE.md) أن عمليات التحقق لم تُشغَّل بعد لهذا البناء، وأنه لم تُقارَن به أي عملية بناء ثانية.
+- قُرئ النص من لقطتين في Internet Archive لصفحة مجلس الشعب، بتاريخ 28 أبريل 2015 و7 ديسمبر 2024 (آخر لقطة قبل 8 ديسمبر 2024)؛ وهما تعطيان الكلمات نفسها في كل حكم. وتعذّرت المقارنة بالصفحة الحالية. وترد قيمة sha256 للقطة التي حُلّلت في `data/versions.json`.
 
-## What it does not show
+## ما لا يتضمنه
 
-- **The law in force today.** The Constitutional Declaration of 13 March 2025, and any law made since 8 December 2024, are not here.
-- **Amendment history.** The page shows one text, and no earlier constitution is here.
-- **Headings.** Part and chapter headings (الباب, الفصل) and the printed index are left out; the articles keep their own headings.
-- **Statutes, decrees, codes and treaties.** None yet, and no catalogue of laws.
+- **القانون النافذ اليوم.** الإعلان الدستوري الصادر في 13 مارس 2025، وأي قانون صدر منذ 8 ديسمبر 2024، ليست هنا.
+- **تاريخ التعديلات.** تعرض الصفحة نصًا واحدًا، ولا يوجد هنا أي دستور سابق.
+- **العناوين.** استُبعدت عناوين الأبواب والفصول (الباب، الفصل) والفهرس المطبوع؛ وتحتفظ المواد بعناوينها الخاصة.
+- **القوانين والمراسيم والتقنينات والمعاهدات.** لا شيء منها بعد، ولا يوجد فهرس للقوانين.
 
-## Sources
+## المصادر
 
-| Source | Kind | Past versions | Notes |
+| المصدر | النوع | النسخ السابقة | ملاحظات |
 | --- | --- | --- | --- |
-| [People's Assembly of the Syrian Arab Republic](http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&) | Official site: the 2012 Constitution (الدستور السوري page) | no, one text | Read through Internet Archive captures of 28 April 2015 and [7 December 2024](https://web.archive.org/web/20241207201658/http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&), retrieved 28 October 2026 |
+| [مجلس الشعب في الجمهورية العربية السورية](http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&) | الموقع الرسمي: دستور 2012 (صفحة الدستور السوري) | لا، نص واحد | قُرئ عبر لقطات Internet Archive بتاريخ 28 أبريل 2015 و[7 ديسمبر 2024](https://web.archive.org/web/20241207201658/http://parliament.gov.sy/arabic/index.php?node=5518&cat=423&)، واستُرجع في 28 أكتوبر 2026 |
 
-## Licence
+## الترخيص
 
-See [`LICENSE`](LICENSE). The People's Assembly page states no licence; the text is an official legislative text, and the Syrian authorities do not endorse this repository. Lexifina's history, commit messages and tools are CC0 1.0.
+انظر [`LICENSE`](LICENSE). لا تذكر صفحة مجلس الشعب أي ترخيص؛ والنص نص تشريعي رسمي، ولا تتبنّى السلطات السورية هذا المستودع. أما السجل الذي أعدّته Lexifina ورسائل الـ commits والأدوات فخاضعة لـ CC0 1.0.
 
-No AI model wrote, translated or corrected legal text; the scripts were written by an AI model (see [`REPRODUCE.md`](REPRODUCE.md)).
+لم يكتب أي نموذج ذكاء اصطناعي نصًا قانونيًا ولم يترجمه ولم يصحّحه؛ أما البرامج النصية فقد كتبها نموذج ذكاء اصطناعي (انظر [`REPRODUCE.md`](REPRODUCE.md)).
 
-## More
+هذا النص ترجمة للنسخة الإنجليزية ([README.en.md](README.en.md))؛ وعند الاختلاف تسود النسخة الإنجليزية.
 
-From [lexifina/global-law](https://github.com/lexifina/global-law):
+## المزيد
 
-- [FEATURES.md](https://github.com/lexifina/global-law/blob/main/FEATURES.md): every feature, and what every corpus must support (`git blame`, `law.py`, the MCP tools)
-- [FAQ.md](https://github.com/lexifina/global-law/blob/main/FAQ.md): questions and answers · [CONTRIBUTING.md](https://github.com/lexifina/global-law/blob/main/CONTRIBUTING.md): proposing changes · [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md): the MCP server · [REPRODUCE.md](https://github.com/lexifina/global-law/blob/main/REPRODUCE.md): how it was built · [CHANGELOG.md](https://github.com/lexifina/global-law/blob/main/CHANGELOG.md)
-- [FRESHNESS.md](https://github.com/lexifina/global-law/blob/main/FRESHNESS.md): how current each corpus is · [Monitoring](https://github.com/lexifina/global-law/tree/main/monitoring): whether updates are running · [WATCHING.md](https://github.com/lexifina/global-law/blob/main/WATCHING.md): how each official source is watched for changes
-- [performance/](https://github.com/lexifina/global-law/tree/main/performance): how fast the tools are, measured
-- [visualisations/](https://github.com/lexifina/global-law/tree/main/visualisations): charts and bridges across the world's law
-- [Vulnerabilities](https://github.com/lexifina/global-law/tree/main/vulnerabilities): mistakes in legislation as published
+من مستودع [lexifina/global-law](https://github.com/lexifina/global-law) (صفحات باللغة الإنجليزية):
+
+- [FEATURES.md](https://github.com/lexifina/global-law/blob/main/FEATURES.md): جميع الميزات، وما يجب أن تدعمه كل مجموعة (`git blame`، `law.py`، أدوات MCP)
+- [FAQ.md](https://github.com/lexifina/global-law/blob/main/FAQ.md): أسئلة وأجوبة · [CONTRIBUTING.md](https://github.com/lexifina/global-law/blob/main/CONTRIBUTING.md): اقتراح تغييرات · [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md): خادم MCP · [REPRODUCE.md](https://github.com/lexifina/global-law/blob/main/REPRODUCE.md): طريقة البناء · [CHANGELOG.md](https://github.com/lexifina/global-law/blob/main/CHANGELOG.md)
+- [FRESHNESS.md](https://github.com/lexifina/global-law/blob/main/FRESHNESS.md): مدى حداثة كل مجموعة · [المراقبة](https://github.com/lexifina/global-law/tree/main/monitoring): هل تعمل التحديثات · [WATCHING.md](https://github.com/lexifina/global-law/blob/main/WATCHING.md): كيف يُراقَب كل مصدر رسمي لرصد التغييرات
+- [performance/](https://github.com/lexifina/global-law/tree/main/performance): سرعة الأدوات كما قيست
+- [visualisations/](https://github.com/lexifina/global-law/tree/main/visualisations): رسوم بيانية وروابط عبر قوانين العالم
+- [الثغرات](https://github.com/lexifina/global-law/tree/main/vulnerabilities): أخطاء في التشريعات كما نُشرت
