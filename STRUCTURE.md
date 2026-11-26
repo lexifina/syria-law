@@ -8,6 +8,7 @@ No folder holds more than 1,000 entries.
 | `الدستور-2012/` | The Constitution of 2012 | one article (`art-001.md`) |
 | `الإعلان-الدستوري-2025/` | The Constitutional Declaration of 13 March 2025 | one article |
 | `التشريعات/<السنة>/` | Laws, legislative decrees and decrees | one instrument (`<النوع>-<الرقم>.md`, e.g. `مرسوم-تشريعي-54.md`, `قانون-59.md`) |
+| `الأحكام/<المحكمة>/<السنة>/<الشهر>/<اليوم>/` | Court decisions (محكمة-النقض, محكمة-النقض/الهيئة-العامة, المحكمة-الإدارية-العليا), one per decision, dated by the decision day | one decision (`قرار-<الرقم>.md`) |
 | `data/`, `tools/` | Tables, charts and the tools to read the history | |
 
 ## Versions and dates
@@ -19,6 +20,15 @@ No folder holds more than 1,000 entries.
 - Trailers on every commit: `Kind:` (law, legislative-decree, decree, layout, documentation), `In-force:`,
   `In-force-basis:` (the clause and field the day comes from) and `Source:`.
 - An instrument whose in-force day cannot be read is held, not committed.
+
+## Court decisions
+
+- `الأحكام/` holds Syrian court decisions, one file per decision, committed at 12:00 Damascus time on the
+  decision day the citation gives (`تاريخ 5/4/2005`). Decisions cited with a year only are left out.
+- Until an official source is reachable they are read from mohamah.net, which re-publishes the principles
+  printed in مجلة المحامين (the Syrian Bar journal) and مجلة القانون: a secondary copy, marked on every commit
+  (`Source-copy:`, `Source-copy-status: secondary copy; verification against the official text pending`).
+- Personal-status, juvenile and sexual-offence decisions are not published here.
 
 ## Sources
 
