@@ -14,7 +14,7 @@ Every word of law in this repository comes from these sources. Lexifina reads th
 
 | Act | Title | Versions | Span |
 | --- | --- | ---: | --- |
-| `constitution-2012` | دستور الجمهورية العربية السورية 2012 | 1 | 2012-02-27 to 2012-02-27 |
+| `الدستور-2012` | دستور الجمهورية العربية السورية 2012 | 1 | 2012-02-27 to 2012-02-27 |
 
 The build made 1 commits:
 

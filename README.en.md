@@ -11,11 +11,11 @@ The law of Syria as a git history: one file per provision, one commit per versio
 
 Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Syria's national law, which global-law reads at `syria/national/acts/`.
 
-**What is in it now:** the Constitution of the Syrian Arab Republic of 2012, in one version: its preamble and Articles 1 to 157 (158 provisions), as the People's Assembly published it. No statute, decree, code or treaty is here yet. [`constitution-2012/README.md`](constitution-2012/README.md) lists every provision; [`REPRODUCE.md`](REPRODUCE.md) says how the files were made.
+**What is in it now:** the Constitution of the Syrian Arab Republic of 2012, in one version: its preamble and Articles 1 to 157 (158 provisions), as the People's Assembly published it. No statute, decree, code or treaty is here yet. [`الدستور-2012/README.md`](الدستور-2012/README.md) lists every provision; [`REPRODUCE.md`](REPRODUCE.md) says how the files were made.
 
 **The 2012 Constitution is no longer in force.** After the fall of the previous government on 8 December 2024 it was replaced in 2025, and the Constitutional Declaration of 13 March 2025 sets out the transitional order. This record keeps the 2012 text as the last constitution the People's Assembly published; the Declaration is not here yet.
 
-Each act is a folder with one file per provision: `constitution-2012/art-001.md` is Article 1 and `constitution-2012/preamble.md` the preamble.
+Each act is a folder with one file per provision: `الدستور-2012/art-001.md` is Article 1 and `الدستور-2012/preamble.md` the preamble.
 
 The text is in Arabic, as the People's Assembly published it. An English translation is not part of this record.
 
@@ -23,10 +23,10 @@ The text is in Arabic, as the People's Assembly published it. An English transla
 
 | Question | Command |
 | --- | --- |
-| Every change to Article 1 of the Constitution | `git log -p --word-diff -- constitution-2012/art-001.md` |
-| Which act wrote each line of Article 1? | `git blame constitution-2012/art-001.md` |
-| Every version of the Constitution, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- constitution-2012 ":^constitution-2012/README.md"` |
-| Article 1 as in force on 1 January 2020 | `python tools/on.py 2020-01-01 constitution-2012 art-001` |
+| Every change to Article 1 of the Constitution | `git log -p --word-diff -- الدستور-2012/art-001.md` |
+| Which act wrote each line of Article 1? | `git blame الدستور-2012/art-001.md` |
+| Every version of the Constitution, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- الدستور-2012 ":^الدستور-2012/README.md"` |
+| Article 1 as in force on 1 January 2020 | `python tools/on.py 2020-01-01 الدستور-2012 art-001` |
 
 **Outside git**, we also host this record publicly, for free:
 
