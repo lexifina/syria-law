@@ -11,13 +11,13 @@ The law of Syria as a git history: one file per provision, one commit per versio
 
 Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Syria's national law, which global-law reads at `syria/national/acts/`.
 
-**What is in it now:** the Constitution of the Syrian Arab Republic of 2012, in one version: its preamble and Articles 1 to 157 (158 provisions), as the People's Assembly published it. No statute, decree, code or treaty is here yet. [`الدستور-2012/README.md`](الدستور-2012/README.md) lists every provision; [`REPRODUCE.md`](REPRODUCE.md) says how the files were made.
+**What is in it now:** the Constitution of 2012 (158 provisions); 205 laws, legislative decrees and decrees, 1958 to 2024, from Internet Archive copies of the People's Assembly database; and 3,588 decisions of the Court of Cassation and the Supreme Administrative Court, 1946 to 2010, as secondary copies (mohamah.net). Of the main codes only the Code of Civil Procedure (Law 1 of 2016) is here. [`STRUCTURE.md`](STRUCTURE.md) sets out the folders; [`REPRODUCE.md`](REPRODUCE.md) says how the first files were made.
 
 **The 2012 Constitution is no longer in force.** After the fall of the previous government on 8 December 2024 it was replaced in 2025, and the Constitutional Declaration of 13 March 2025 sets out the transitional order. This record keeps the 2012 text as the last constitution the People's Assembly published; the Declaration is not here yet.
 
 Each act is a folder with one file per provision: `الدستور-2012/art-001.md` is Article 1 and `الدستور-2012/preamble.md` the preamble.
 
-The text is in Arabic, as the People's Assembly published it. An English translation is not part of this record.
+The texts are in Arabic, as their sources published them. An English translation is not part of this record.
 
 ## Questions as git commands
 
